@@ -58,7 +58,6 @@ class Board extends Component {
 // }
 
 let a = <Board name="a" id="ida">
-    <div>123</div>
 </Board>
 
 ToyReact.render(

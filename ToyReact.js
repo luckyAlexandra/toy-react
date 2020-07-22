@@ -55,12 +55,12 @@ export class Component {
     }
     mountTo (range) {
         this.range = range
+        // debugger
         this.update()
     }
     update () {
         let palceholder = document.createComment("placeholder")
         let range  = document.createRange()
-        console.log('container---?', this.range.endContainer)
         range.setStart(this.range.endContainer, this.range.endOffset)
         range.setEnd(this.range.endContainer, this.range.endOffset)
         range.insertNode(palceholder)
@@ -93,6 +93,7 @@ export class Component {
         }
         merge(this.state, state)
         console.log(this.state)
+        this.update()
     }
 }
 
@@ -135,9 +136,9 @@ export let ToyReact = {
             range.setStartAfter(element.lastChild)
             range.setEndAfter(element.lastChild)
         } else {
-            range.setStart(element, 0)
-            range.setEnd(element, 0)
+            range.setStartAfter(element, 0)
+            range.setEndAfter(element, 0)
         }
-        vdom.mountTo(element)
+        vdom.mountTo(range)
     }
 }
