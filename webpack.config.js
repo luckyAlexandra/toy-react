@@ -10,7 +10,7 @@ module.exports = {
         filename: 'main.js',
         path: path.resolve(__dirname, 'dist'),
     },
-    module: {
+    module: { 
         rules: [
             {
                 test:/\.js$/,
@@ -18,8 +18,11 @@ module.exports = {
                     loader:'babel-loader',
                     options: {
                         presets: ['@babel/preset-env'],
-                        plugins: [[
-                                "@babel/plugin-transform-react-jsx",
+                        plugins: [
+                            [
+                                // plugin的名字
+                                "@babel/plugin-transform-react-jsx", 
+                                // plugin的config
                                 { 
                                     pragma: "ToyReact.createElement"
                                 } // 这里的配置仅仅是字符串的替换
