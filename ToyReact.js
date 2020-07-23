@@ -222,6 +222,7 @@ export class Component {
         }
         merge(this.state, state)
         console.log(this.state)
+        this.update()
     }
 }
 
